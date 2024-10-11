@@ -1,0 +1,30 @@
+[
+
+  {
+    "image": "axelot.jpeg",
+    "duration": 5,
+    "erid_code": "ER12345",
+    "company_url": "https://www.example.com",
+    "company_name": "Example Company",
+    "organization": "Axelot",
+    "%": 25
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://www.anotherexample.com",
+    "company_name": "Another Company",
+    "image": "datarion.jpeg",
+    "duration": 5,
+    "organization": "datarion",
+    "%": 25
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://www.anotherexample.com",
+    "company_name": "Another Company",
+    "image": "content_img.png",
+    "duration": 5,
+    "organization": "360",
+    "%": 50
+  }
+]

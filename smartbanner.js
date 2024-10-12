@@ -130,4 +130,7 @@
     // Интервал обновления изображения
     setInterval(updateBanner, 2000,banner1,1);
     setInterval(updateBanner, 2000,banner2,2);
+    startTime();
+
+
 

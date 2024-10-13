@@ -2,7 +2,7 @@
 
   {
     "image": "axelot.jpeg",
-    "duration": 5,
+    "duration": 500,
     "erid_code": "ER12345",
     "company_url": "https://www.example.com",
     "company_name": "Example Company",
@@ -32,7 +32,7 @@
     "company_url": "https://www.anotherexample.com",
     "company_name": "Another Company",
     "image": "content_img.png",
-    "duration": 5,
+    "duration": 500,
     "organization": "360",
     "%": 50
   }

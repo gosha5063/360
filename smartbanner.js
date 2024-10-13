@@ -36,7 +36,7 @@
     const img = document.createElement('img');
 
     const url = 'https://smartbanners24.ru/localhost?getJson?t=' + Date.now() + "?id=" + id; // Добавляем временную метку
-    img.src = 'https://smartbanners24.ru/localhost?getImg?t=' + Date.now() + "?" + id; // Добавляем временную метку
+    img.src = 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + "?id=" + id; // Добавляем временную метку
 
     const eridCode = document.createElement('div');
     const companyLink = document.createElement('a');

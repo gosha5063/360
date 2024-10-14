@@ -1,18 +1,17 @@
 [
-
   {
     "image": "axelot.jpeg",
     "duration": 5,
     "erid_code": "ER12345",
-    "company_url": "https://www.example.com",
-    "company_name": "Example Company",
+    "company_url": "https://www.axelot.com/",
+    "company_name": "Axelot",
     "organization": "Axelot",
     "%": 25
   },
   {
     "erid_code": "ER67890",
-    "company_url": "https://www.anotherexample.com",
-    "company_name": "Another Company",
+    "company_url": "https://datareon.ru/solution/datareon-esb/",
+    "company_name": "Datarion",
     "image": "datarion.jpeg",
     "duration": 5,
     "organization": "datarion",
@@ -20,8 +19,8 @@
   },
   {
     "erid_code": "ER67890",
-    "company_url": "https://www.anotherexample.com",
-    "company_name": "Another Company",
+    "company_url": "https://logistics360.ru/",
+    "company_name": "Yandex 360",
     "image": "content_img.png",
     "duration": 5,
     "organization": "360",

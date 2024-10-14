@@ -2,12 +2,21 @@
 
   {
     "image": "axelot.jpeg",
+    "duration": 500,
+    "erid_code": "ER12345",
+    "company_url": "https://www.example.com",
+    "company_name": "Example Company",
+    "organization": "Axelot",
+    "%": 10
+  },
+  {
+    "image": "scale_1200.png",
     "duration": 5,
     "erid_code": "ER12345",
     "company_url": "https://www.axelot.ru/",
     "company_name": "Example Company",
     "organization": "Axelot",
-    "%": 25
+    "%": 15
   },
   {
     "erid_code": "ER67890",
@@ -23,7 +32,7 @@
     "company_url": "https://www.anotherexample.com",
     "company_name": "Another Company",
     "image": "content_img.png",
-    "duration": 5,
+    "duration": 500,
     "organization": "360",
     "%": 50
   }

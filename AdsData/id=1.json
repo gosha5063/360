@@ -1,7 +1,7 @@
 [
   {
     "image": "axelot.jpeg",
-    "duration": 500,
+    "duration": 5,
     "erid_code": "ER12345",
     "company_url": "https://www.axelot.ru/product/axelot-dom/",
     "company_name": "Axelot",
@@ -31,7 +31,7 @@
     "company_url": "https://logistics360.ru/",
     "company_name": "Logistics 360",
     "image": "content_img.png",
-    "duration": 500,
+    "duration": 5,
     "organization": "360",
     "%": 50
   }

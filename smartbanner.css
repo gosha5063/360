@@ -1,0 +1,90 @@
+
+.banner{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Обводка с полупрозрачным белым цветом */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #aaa3a3; /* Фон, если изображение не загружено */
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: opacity 0.5s ease; /* Плавный переход при появлении */
+}
+
+/* Класс для отображения загруженной картинки */
+
+.dot-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    /*animation: dot-animation 1s infinite;*/
+}
+
+@keyframes dot-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.ad-label {
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Стили для всплывающего баннера */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay a {
+    color: #00aaff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* Кнопка закрытия можно удалить или скрыть */
+.close-button {
+    position: absolute;
+    top: 10px; /* Позиционируем кнопку в верхнем правом углу */
+    right: 10px;
+    background-color: transparent; /* Прозрачный фон */
+    color: white; /* Белый текст */
+    border: none; /* Убираем рамку */
+    padding: 5px 10px; /* Отступы */
+    cursor: pointer; /* Курсор указатель */
+    font-size: 1.2em; /* Размер шрифта */
+    z-index: 101; /* Более высокий z-index, чтобы кнопка была поверх overlay */
+}

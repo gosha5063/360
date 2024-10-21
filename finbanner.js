@@ -30,21 +30,26 @@ async function fetchDataAndUpdateElements(url) {
 const banner1 = document.getElementById('banner1');
 const banner2 = document.getElementById('banner');
 
-
+const dictionary = new Map();
+dictionary.set(1,"")
+dictionary.set(2,"")
 function updateBanner(banner, id) {
     // Загрузка изображения
 
     const img = document.createElement('img');
 
     const url = 'https://smartbanners24.ru/360?getJson?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
-    const imgUrl= 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
-
-    // Создаем элементы для всплывающей информации
 
 
     // Вызываем функцию для получения данных и обновления элементов
     fetchDataAndUpdateElements(url)
         .then(result => {
+            if (result.href === dictionary.get(id))
+                return
+            dictionary.set(id,result.href)
+
+            const imgUrl= 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
+
             const eridCode = document.createElement('div');
             eridCode.textContent = result.erid
             const companyName = document.createElement('a');
@@ -54,11 +59,6 @@ function updateBanner(banner, id) {
 
             companyName.textContent = result.companyName
             img.src = imgUrl
-            // console.log(result.href)
-
-            // После получения данных:
-            // ...
-
 
             img.onload = function() {
 

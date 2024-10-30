@@ -7,7 +7,7 @@
     "company_name": "Axelot",
     "organization": "Axelot",
     "%": 25,
-    "location":"banner1"
+    "location":"id=1"
   },
   {
     "erid_code": "ER67890",
@@ -17,7 +17,7 @@
     "duration": 5,
     "organization": "datarion",
     "%": 25,
-    "location":"banner1"
+    "location":"id=1"
   },
   {
     "erid_code": "ER67890",
@@ -27,7 +27,7 @@
     "duration": 5,
     "organization": "360",
     "%": 50,
-    "location":"banner1"
+    "location":"id=1"
   },
   {
     "image": "axelot.jpeg",
@@ -37,7 +37,7 @@
     "company_name": "Axelot",
     "organization": "Axelot",
     "%": 10,
-    "location":"banner2"
+    "location":"id=2"
   },
   {
     "image": "scale_1200.png",
@@ -47,7 +47,7 @@
     "company_name": "gazprom",
     "organization": "gazprom",
     "%": 15,
-    "location":"banner2"
+    "location":"id=2"
   },
   {
     "erid_code": "ER67890",
@@ -57,7 +57,7 @@
     "duration": 5,
     "organization": "datarion",
     "%": 25,
-    "location":"banner2"
+    "location":"id=2"
   },
   {
     "erid_code": "ER67890",
@@ -67,6 +67,6 @@
     "duration": 5,
     "organization": "360",
     "%": 50,
-    "location":"banner2"
+    "location":"id=2"
   }
 ]

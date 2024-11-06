@@ -23,14 +23,14 @@
     "erid_code": "ER67890",
     "company_url": "https://logistics360.ru/",
     "company_name": "Yandex 360",
-    "image": "content_img.png",
+    "image": "https://logistics360.ru/smartbanner/images/content_img.png",
     "duration": 5,
     "organization": "360",
     "%": 50,
     "location":"id=1"
   },
   {
-    "image": "axelot.jpeg",
+    "image": "https://logistics360.ru/smartbanner/images/axelot.jpeg",
     "duration": 5,
     "erid_code": "ER12345",
     "company_url": "https://www.axelot.ru/product/axelot-dom/",
@@ -40,7 +40,7 @@
     "location":"id=2"
   },
   {
-    "image": "scale_1200.png",
+    "image": "https://logistics360.ru/smartbanner/images/scale_1200.png",
     "duration": 5,
     "erid_code": "ER12345",
     "company_url": "https://www.gazprom-neft.ru/",
@@ -53,7 +53,7 @@
     "erid_code": "ER67890",
     "company_url": "https://datareon.ru/solution/datareon-esb/",
     "company_name": "Datarion",
-    "image": "datarion.jpeg",
+    "image": "https://logistics360.ru/smartbanner/images/datarion.jpeg",
     "duration": 5,
     "organization": "datarion",
     "%": 25,
@@ -63,7 +63,7 @@
     "erid_code": "ER67890",
     "company_url": "https://logistics360.ru/",
     "company_name": "Logistics 360",
-    "image": "content_img.png",
+    "image": "https://logistics360.ru/smartbanner/images/content_img.png",
     "duration": 5,
     "organization": "360",
     "%": 50,

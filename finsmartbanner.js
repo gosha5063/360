@@ -12,11 +12,12 @@ async function fetchDataAndUpdateElements(url) {
 
         // Если в JSON есть URL изображения:
         // Возвращаем объект с новым href
-        let href,companyName,erid
+
         return {
             href: data.company_href,
             companyName: data.company_name,
-            erid: data.erid
+            erid: data.erid,
+            url: data.image,
         };
 
 
@@ -27,8 +28,11 @@ async function fetchDataAndUpdateElements(url) {
 }
 
 // Вызываем функцию для получения данных и обновления элемент
+
 const banner1 = document.getElementById('banner1');
-const banner2 = document.getElementById('banner');
+const banner2 = document.getElementById('banner2');
+const banner3 = document.getElementById('banner3');
+
 
 const dictionary = new Map();
 dictionary.set(1,"")
@@ -48,10 +52,10 @@ function updateBanner(banner, id) {
                 return
             dictionary.set(id,result.href)
 
-            const imgUrl= 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
-
+            const imgUrl = result.url;
             const eridCode = document.createElement('div');
             eridCode.textContent = result.erid
+
             const companyName = document.createElement('a');
             companyName.href = result.href
 
@@ -59,10 +63,21 @@ function updateBanner(banner, id) {
 
             companyName.textContent = result.companyName
             img.src = imgUrl
+            const height = img.style.height
+            const width = img.style.width
 
+
+            console.log(height, width)
             img.onload = function() {
 
-
+                const height = img.height
+                const width = img.width
+                const bannerElement = document.querySelector('.banner');
+                const bannerWidth = parseFloat(window.getComputedStyle(bannerElement).width);
+                const newHeight = (height * bannerWidth / width);
+                banner.style.height = newHeight + 'px'
+                img.setAttribute('width',width+'px');
+                img.setAttribute('height', newHeight+'px');
 
                 // Очистка баннера
 
@@ -153,9 +168,11 @@ function updateBanner(banner, id) {
 // Вызов функции при загрузке страницы
 updateBanner(banner1, 1);
 updateBanner(banner2, 2);
+// updateBanner(banner3,3)
 
 // Интервал обновления изображения
 setInterval(() => {
     updateBanner(banner1, 1);
     updateBanner(banner2, 2);
+    // updateBanner(banner3,3)
 }, 2000);

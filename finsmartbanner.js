@@ -1,9 +1,6 @@
 
-async function fetchDataAndUpdateElements(url,name,href,erid) {
+async function fetchDataAndUpdateElements(url) {
     try {
-
-        // const url = 'https://smartbanners24.ru/localhost?getImg?t=' + Date.now() + "?id=" + id;
-
         const response = await fetch(url,{ cache: 'no-store' });
 
         if (!response.ok) {
@@ -12,10 +9,15 @@ async function fetchDataAndUpdateElements(url,name,href,erid) {
         const data = await response.json();
 
         // Обновляем элементы, используя данные из JSON
-        name.textContent = data.company_name;
-        erid.textContent = data.erid;
+
         // Если в JSON есть URL изображения:
-        return { href: data.company_href }; // Возвращаем объект с новым href
+        // Возвращаем объект с новым href
+        let href,companyName,erid
+        return {
+            href: data.company_href,
+            companyName: data.company_name,
+            erid: data.erid
+        };
 
 
     } catch (error) {
@@ -24,34 +26,39 @@ async function fetchDataAndUpdateElements(url,name,href,erid) {
     }
 }
 
-// Вызываем функцию для получения данных и обновления элементо
+// Вызываем функцию для получения данных и обновления элемент
 const banner1 = document.getElementById('banner1');
 const banner2 = document.getElementById('banner');
 
-
+const dictionary = new Map();
+dictionary.set(1,"")
+dictionary.set(2,"")
 function updateBanner(banner, id) {
     // Загрузка изображения
 
     const img = document.createElement('img');
 
     const url = 'https://smartbanners24.ru/360?getJson?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
-    const imgUrl= 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
-
-    // Создаем элементы для всплывающей информации
-    const eridCode = document.createElement('div');
-    let companyLink = "https://google.com"
-    const companyName = document.createElement('a');
 
 
     // Вызываем функцию для получения данных и обновления элементов
-    fetchDataAndUpdateElements(url, companyName, companyLink, eridCode)
+    fetchDataAndUpdateElements(url)
         .then(result => {
+            if (result.href === dictionary.get(id))
+                return
+            dictionary.set(id,result.href)
 
+            const imgUrl= 'https://smartbanners24.ru/360?getImg?t=' + Date.now() + '?id=' + id; // Добавляем временную метку
+
+            const eridCode = document.createElement('div');
+            eridCode.textContent = result.erid
+            const companyName = document.createElement('a');
+            companyName.href = result.href
+
+            companyName.target = '_blank'; // Открывает ссылку в новой вкладке
+
+            companyName.textContent = result.companyName
             img.src = imgUrl
-
-            // После получения данных:
-            // ...
-            companyLink = result.href
 
             img.onload = function() {
 
@@ -60,6 +67,7 @@ function updateBanner(banner, id) {
                 // Очистка баннера
 
                 banner.innerHTML = '';
+                companyName.href = result.href
 
                 // Создание контейнера с точками
                 const dotContainer = document.createElement('div');
@@ -81,7 +89,6 @@ function updateBanner(banner, id) {
                 // Создание всплывающего баннера
                 const overlay = document.createElement('div');
                 overlay.classList.add('overlay');
-
                 // Добавление контента в overlay
                 overlay.appendChild(eridCode);
                 overlay.appendChild(companyName);
@@ -104,7 +111,7 @@ function updateBanner(banner, id) {
                     overlay.style.display = 'none';
                     event.stopPropagation(); // Останавливаем всплытие события
                 });
-
+                banner.dataset.companyHref = companyName.href;
                 banner.addEventListener('click', function(event) {
                     if (event.target === closeButton) {
                         return;
@@ -118,8 +125,9 @@ function updateBanner(banner, id) {
                     if (event.target === closeButton || event.target === overlay) {
                         return; // Не переходим по ссылке
                     }
+                    const companyHref = event.target.closest('.banner').dataset.companyHref;
 
-                    window.open(companyLink, '_blank'); // Открывает ссылку в новой вкладке
+                    window.open(companyHref, '_blank'); // Открывает ссылку в новой вкладке
                 });
 
 
@@ -150,4 +158,4 @@ updateBanner(banner2, 2);
 setInterval(() => {
     updateBanner(banner1, 1);
     updateBanner(banner2, 2);
-}, 10000);
+}, 2000);

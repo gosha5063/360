@@ -1,0 +1,72 @@
+[
+  {
+    "image": "https://logistics360.ru/smartbanner/images/axelot.jpeg",
+    "duration": 5,
+    "erid_code": "ER12345",
+    "company_url": "https://www.axelot.ru/product/axelot-dom/",
+    "company_name": "Axelot",
+    "organization": "Axelot",
+    "%": 25,
+    "location":"id=1"
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://datareon.ru/solution/datareon-esb/",
+    "company_name": "Datarion",
+    "image": "https://logistics360.ru/smartbanner/images/datarion.jpeg",
+    "duration": 5,
+    "organization": "datarion",
+    "%": 25,
+    "location":"id=1"
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://logistics360.ru/",
+    "company_name": "Yandex 360",
+    "image": "https://logistics360.ru/smartbanner/images/content_img.png",
+    "duration": 5,
+    "organization": "360",
+    "%": 50,
+    "location":"id=1"
+  },
+  {
+    "image": "https://logistics360.ru/smartbanner/images/axelot.jpeg",
+    "duration": 5,
+    "erid_code": "ER12345",
+    "company_url": "https://www.axelot.ru/product/axelot-dom/",
+    "company_name": "Axelot",
+    "organization": "Axelot",
+    "%": 10,
+    "location":"id=2"
+  },
+  {
+    "image": "https://logistics360.ru/smartbanner/images/scale_1200.png",
+    "duration": 5,
+    "erid_code": "ER12345",
+    "company_url": "https://www.gazprom-neft.ru/",
+    "company_name": "gazprom",
+    "organization": "gazprom",
+    "%": 15,
+    "location":"id=2"
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://datareon.ru/solution/datareon-esb/",
+    "company_name": "Datarion",
+    "image": "https://logistics360.ru/smartbanner/images/datarion.jpeg",
+    "duration": 5,
+    "organization": "datarion",
+    "%": 25,
+    "location":"id=2"
+  },
+  {
+    "erid_code": "ER67890",
+    "company_url": "https://logistics360.ru/",
+    "company_name": "Logistics 360",
+    "image": "https://logistics360.ru/smartbanner/images/content_img.png",
+    "duration": 5,
+    "organization": "360",
+    "%": 50,
+    "location":"id=2"
+  }
+]

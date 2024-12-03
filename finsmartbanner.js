@@ -29,14 +29,15 @@ async function fetchDataAndUpdateElements(url) {
 
 // Вызываем функцию для получения данных и обновления элемент
 
-const banner1 = document.getElementById('banner1');
-const banner2 = document.getElementById('banner2');
-const banner3 = document.getElementById('banner3');
-
+const banners = document.querySelectorAll('.banner'); // Находим все элементы с классом 'banner'
 
 const dictionary = new Map();
-dictionary.set(1,"")
-dictionary.set(2,"")
+
+// Инициализируем словарь для всех баннеров
+banners.forEach((banner, index) => {
+    dictionary.set(index + 1, ""); // Считаем идентификаторы от 1
+});
+
 function updateBanner(banner, id) {
     // Загрузка изображения
 
@@ -166,13 +167,14 @@ function updateBanner(banner, id) {
 }
 
 // Вызов функции при загрузке страницы
-updateBanner(banner1, 1);
-updateBanner(banner2, 2);
-// updateBanner(banner3,3)
+banners.forEach((banner,index)=>{
+    updateBanner(banner, index+1);
+})
+
 
 // Интервал обновления изображения
 setInterval(() => {
-    updateBanner(banner1, 1);
-    updateBanner(banner2, 2);
-    // updateBanner(banner3,3)
+    banners.forEach((banner,index)=>{
+        updateBanner(banner, index+1);
+    })
 }, 2000);
